@@ -10,7 +10,7 @@ public class BulletScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = gameObject.GetComponent<Rigidbody2D>();
+        rb = this.gameObject.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class BulletScript : MonoBehaviour
         switch (collision.tag)
         {
             case "Player":
-                collision.GetComponent<PlayerScript>().ReduceHealth(damage);
+                //collision.GetComponent<PlayerScript>().ReduceHealth(damage);
                 SelfKill();
                 break;
             case "Obstacle":

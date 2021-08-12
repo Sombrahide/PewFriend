@@ -15,7 +15,7 @@ public class PlayerScript : MonoBehaviour
     public Transform gun;
 
     //The Player speed of movement
-    public float speed = 5;
+    public float speed = 5f;
 
     //The movement of the player right now
     private Vector2 inputMovement;
@@ -30,8 +30,8 @@ public class PlayerScript : MonoBehaviour
         Debug.Log("Shoot: " + value.started);
         if (value.started)
         {
-            //Here write the code for whenn you shoot
-            GameObject proyectile = Instantiate(bullet, gun.position, transform.rotation);
+            //Here write the code for when you shoot
+            GameObject projectile = Instantiate(bullet, gun.position, transform.rotation);
         }
     }
     public void OnMovement(InputAction.CallbackContext value)

@@ -11,12 +11,7 @@ public class BulletScript : MonoBehaviour
     void Start()
     {
         rb = this.gameObject.GetComponent<Rigidbody2D>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        rb.AddForce(new Vector2(speed, 0));
+        rb.AddForce(new Vector2(speed, 0), ForceMode2D.Impulse);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -24,7 +19,7 @@ public class BulletScript : MonoBehaviour
         switch (collision.tag)
         {
             case "Player":
-                //collision.GetComponent<PlayerScript>().ReduceHealth(damage);
+                collision.GetComponent<PlayerScript>().ReduceHealth(damage);
                 SelfKill();
                 break;
             case "Obstacle":
